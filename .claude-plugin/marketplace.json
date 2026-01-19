@@ -1,5 +1,8 @@
 {
   "name": "infinite-moves-marketplace",
+  "owner": {
+    "name": "Abhiram Aiyer"
+  },
   "description": "Plugins for autonomous task generation and execution",
   "plugins": [
     {
