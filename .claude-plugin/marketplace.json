@@ -1,0 +1,17 @@
+{
+  "name": "infinite-moves-marketplace",
+  "description": "Plugins for autonomous task generation and execution",
+  "plugins": [
+    {
+      "name": "infinite-moves",
+      "source": "./plugins/infinite-moves",
+      "description": "Multiple loops for infinite task generation and execution",
+      "version": "1.0.0",
+      "author": {
+        "name": "Abhiram Aiyer"
+      },
+      "repository": "https://github.com/mastra-ai/infinite-moves",
+      "keywords": ["automation", "tasks", "loops", "ideation", "execution"]
+    }
+  ]
+}
