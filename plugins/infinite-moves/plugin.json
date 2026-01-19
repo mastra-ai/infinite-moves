@@ -1,0 +1,15 @@
+{
+  "name": "infinite-moves",
+  "version": "1.0.0",
+  "description": "Multiple loops for infinite task generation and execution",
+  "commands": [
+    "commands/run.md",
+    "commands/ideate.md",
+    "commands/status.md",
+    "commands/sweep.md"
+  ],
+  "agents": [
+    "agents/task-executor.md",
+    "agents/verifier.md"
+  ]
+}
