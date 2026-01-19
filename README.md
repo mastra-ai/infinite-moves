@@ -32,7 +32,16 @@ They execute a predefined backlog until it's empty. **Infinite Moves is differen
 
 **Ideation** scans docs, code, and your ideas to generate tasks. **Execution** works through them. **Debt sweep** keeps quality high. When the backlog runs low, ideation finds more. It's perpetual, self-sustaining development.
 
-## Architecture
+## Supported Platforms
+
+| Platform | Location | Status |
+|----------|----------|--------|
+| **Claude Code** | `skills/` + `plugins/` | ✓ Full support |
+| **OpenCode** | `opencode/` | ✓ Full support |
+
+See platform-specific READMEs for installation instructions.
+
+## Architecture (Claude Code)
 
 Two components working together:
 
@@ -96,19 +105,28 @@ All artifacts are stored in `.infinite-moves/` at the project root:
 
 ```
 infinite-moves/
-├── skills/infinite-moves/
-│   └── SKILL.md                    # Awareness layer
 │
-└── plugins/infinite-moves/
-    ├── plugin.json                 # Plugin manifest
-    ├── commands/
-    │   ├── run.md                  # /moves run
-    │   ├── ideate.md               # /moves ideate
-    │   ├── status.md               # /moves status
-    │   └── sweep.md                # /moves sweep
+├── skills/infinite-moves/          # Claude Code skill
+│   └── SKILL.md
+│
+├── plugins/infinite-moves/         # Claude Code plugin
+│   ├── plugin.json
+│   ├── commands/
+│   │   ├── run.md
+│   │   ├── ideate.md
+│   │   ├── status.md
+│   │   └── sweep.md
+│   └── agents/
+│       ├── task-executor.md
+│       └── verifier.md
+│
+└── opencode/                       # OpenCode support
+    ├── README.md
+    ├── plugins/
+    │   └── infinite-moves.ts       # TypeScript plugin
     └── agents/
-        ├── task-executor.md        # Executes tasks
-        └── verifier.md             # Verifies completion
+        ├── task-executor.md
+        └── verifier.md
 ```
 
 ## The Loops
