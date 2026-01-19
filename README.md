@@ -15,11 +15,11 @@ They execute a predefined backlog until it's empty. **Infinite Moves is differen
 ```
 ┌───────────────────────────────────────────────────┐
 │                                                   │
-│   Ideation ───→ Execution ───→ Debt Sweep        │
+│   Ideation ───→ Execution ───→ Debt Sweep         │
 │       ↑               │             │             │
 │       └───────────────┴─────────────┘             │
 │                                                   │
-│   The loops feed each other. Work never ends.    │
+│   The loops feed each other. Work never ends.     │
 └───────────────────────────────────────────────────┘
 ```
 
