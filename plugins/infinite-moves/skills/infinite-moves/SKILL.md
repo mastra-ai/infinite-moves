@@ -25,7 +25,8 @@ The plugin provides these commands - invoke them directly:
 |---------|---------|--------------|
 | Run/execute tasks | `/moves run` | Execute tasks from manifest |
 | Parallel execution | `/moves run --parallel 2` | Run non-conflicting tasks concurrently |
-| Continuous mode | `/moves run --continuous` | Keep going until done |
+| Continuous mode | `/moves run --continuous` | Keep going until manifest empty |
+| **Infinite mode** | `/moves run --infinite` | Never stop - auto-ideate when low |
 | Check status | `/moves status` | Show pipeline health, available tasks |
 | Generate from idea | `/moves ideate --topic "..."` | Create design doc + tasks from topic |
 | Find gaps | `/moves ideate` | Scan docs vs code for missing work |
@@ -52,6 +53,11 @@ You: [invoke /moves ideate --topic "meditation feature"]
 ```
 User: "Run tasks in parallel until done"
 You: [invoke /moves run --continuous --parallel 2]
+```
+
+```
+User: "Run forever" / "Keep working indefinitely" / "Infinite loop"
+You: [invoke /moves run --infinite --parallel 2]
 ```
 
 ## Command Details

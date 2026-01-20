@@ -13,9 +13,11 @@ Execute tasks from `.infinite-moves/manifest.json`.
 /moves run                          # Single task
 /moves run --parallel <n>           # N concurrent tasks
 /moves run --continuous             # Until all done
+/moves run --infinite               # Never stop - ideate when backlog empties
 /moves run --cycles <n>             # Run n cycles then stop
 /moves run --debt-interval <n>      # Debt sweep every n cycles
 /moves run --debt-fix <level>       # Auto-fix debt (critical|high|medium|low)
+/moves run --ideate-threshold <n>   # Ideate when < n tasks remain (default: 3)
 ```
 
 ## Execution Flow
@@ -28,6 +30,32 @@ Execute tasks from `.infinite-moves/manifest.json`.
 6. Verify: run `npm run build` (or project's build command)
 7. Update manifest to "completed"
 8. Purge completed tasks from manifest
+
+## Infinite Mode
+
+With `--infinite`:
+- Runs tasks continuously like `--continuous`
+- When available tasks drop below threshold (default 3), triggers `/moves ideate`
+- Ideation scans for gaps, generates new tasks
+- Resumes execution with fresh backlog
+- Never stops unless manually interrupted or ideation finds nothing new
+
+Use `--ideate-threshold N` to control when ideation triggers:
+```
+/moves run --infinite --ideate-threshold 5   # Ideate when < 5 tasks left
+```
+
+**The Loop:**
+```
+┌─────────────────────────────────────────┐
+│  1. Execute highest priority task       │
+│  2. Mark complete, purge from manifest  │
+│  3. Check: tasks remaining < threshold? │
+│     YES → Run /moves ideate             │
+│     NO  → Continue                      │
+│  4. Repeat forever                      │
+└─────────────────────────────────────────┘
+```
 
 ## Parallel Mode
 
